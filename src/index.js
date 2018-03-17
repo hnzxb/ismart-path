@@ -3,7 +3,7 @@ var fs      = require("fs-extra");
 var RootDir = process.cwd();
 
 /**
- * nodejs path组件扩展
+ * nodejs 原生path组件扩展
  * @name ismart-path
  */
 
