@@ -8,7 +8,6 @@ var RootDir = process.cwd();
  */
 
 
-
 /**
  * 自动创建文件
  *
@@ -20,10 +19,9 @@ var RootDir = process.cwd();
 
 path.smartFile = function () {
     
- 
     
     var filename = path.join(RootDir);
-    var arr     = Array.prototype.slice.call(arguments);
+    var arr      = Array.prototype.slice.call(arguments);
     arr.forEach(function (item) {
         filename = path.join(filename, item);
     })
@@ -43,7 +41,7 @@ path.smartFile = function () {
  */
 
 
-path.smartDir  = function () {
+path.smartDir = function () {
     var dirName = path.join(RootDir);
     var arr     = Array.prototype.slice.call(arguments);
     arr.forEach(function (item) {
@@ -53,8 +51,18 @@ path.smartDir  = function () {
     return dirName;
 }
 
-module.exports      = path;
-module.exports.Root = function (_dirname) {
+module.exports = path;
+
+/**
+ * 设置smart类方法的默认初始目录
+ *
+ * @name path.smart
+ * @grammar path.smart(__dirname)
+ * @example
+ * path.smart(__dirname)
+ */
+
+module.exports.smart = function (_dirname) {
     RootDir = path.resolve(_dirname);
     return path;
 }
